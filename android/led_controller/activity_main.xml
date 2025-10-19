@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/connectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conectar Bluetooth"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/redBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rojo"
+        android:backgroundTint="#FF0000"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/greenBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verde"
+        android:backgroundTint="#00FF00"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/blueBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Azul"
+        android:backgroundTint="#0000FF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/offBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apagar"
+        android:backgroundTint="#808080" />
+
+</LinearLayout>
