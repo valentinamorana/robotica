@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/connectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conectar Bluetooth"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modo Sonido"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <Switch
+        android:id="@+id/soundSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brillo"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/brightnessSeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progress="64"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección de Luces"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/allBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Todas"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/leftBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Izquierda"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/rightBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Derecha"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/centerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Centro" />
+
+</LinearLayout>

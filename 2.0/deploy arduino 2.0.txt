@@ -1,0 +1,119 @@
+PLAN DE IMPLEMENTACIÓN - CONTROL DE LEDS WS2812B CON SONIDO v2.0
+================================================================
+
+COMPONENTES NECESARIOS:
+- Arduino Uno
+- Tira de LEDs WS2812B
+- Módulo Bluetooth HC-05
+- Micrófono MAX4466 o similar
+- Fuente de alimentación 5V (si la tira tiene muchos LEDs)
+- Cables jumper
+- Resistencia 470Ω (opcional)
+- Capacitor 1000µF (opcional)
+
+CIRCUITO ELECTRÓNICO v2.0:
+==========================
+
+CONEXIONES TIRA LED WS2812B:
+- VCC (Rojo) → 5V Arduino
+- GND (Negro) → GND Arduino
+- DIN (Verde/Blanco) → Pin Digital 6 Arduino
+
+CONEXIONES MÓDULO HC-05:
+- VCC → 5V Arduino
+- GND → GND Arduino  
+- RX → Pin Digital 2 Arduino
+- TX → Pin Digital 3 Arduino
+
+CONEXIONES MICRÓFONO MAX4466:
+- VCC → 3.3V Arduino
+- GND → GND Arduino
+- OUT → Pin Analógico A0 Arduino
+
+DIAGRAMA CONEXIONES v2.0:
+                    Arduino Uno
+                   ┌─────────────┐
+                   │             │
+    HC-05 VCC ────→│ 5V          │
+    HC-05 GND ────→│ GND         │
+    HC-05 RX  ────→│ D2          │
+    HC-05 TX  ────→│ D3          │
+                   │             │
+    LED VCC   ────→│ 5V          │
+    LED GND   ────→│ GND         │
+    LED DIN   ────→│ D6          │
+                   │             │
+    MIC VCC   ────→│ 3.3V        │
+    MIC GND   ────→│ GND         │
+    MIC OUT   ────→│ A0          │
+                   │             │
+                   └─────────────┘
+
+PASOS DE IMPLEMENTACIÓN:
+========================
+
+1. PREPARACIÓN DEL ENTORNO:
+   - Instalar Arduino IDE
+   - Instalar librería FastLED
+
+2. MONTAJE DEL CIRCUITO:
+   - Conectar la tira LED según el diagrama
+   - Conectar el módulo HC-05 según el diagrama
+   - Conectar el micrófono MAX4466 según el diagrama
+   - Verificar todas las conexiones
+
+3. CONFIGURACIÓN DEL HC-05:
+   - Mismo proceso que versión 1.0
+   - AT+NAME=LEDController_v2
+
+4. CARGA DEL CÓDIGO:
+   - Abrir el archivo: /home/mmorana/IA/valen/2.0/arduino/ws2812b_sound_control/ws2812b_sound_control.ino
+   - Verificar configuración:
+     * NUM_LEDS = número real de LEDs
+     * LED_PIN = 6
+     * MIC_PIN = A0
+   - Compilar y subir al Arduino
+
+5. CALIBRACIÓN DEL MICRÓFONO:
+   - Abrir Serial Monitor
+   - Observar valores del micrófono en silencio
+   - Ajustar soundThreshold según ambiente
+   - Valor típico: 100-200
+
+6. PRUEBAS v2.0:
+   - Verificar respuesta a sonido
+   - Probar comandos Bluetooth:
+     * "BRIGHTNESS:128" → Cambiar brillo
+     * "DIRECTION:1" → Solo lado izquierdo
+     * "SOUND_ON/OFF" → Activar/desactivar modo sonido
+
+NUEVAS CARACTERÍSTICAS v2.0:
+============================
+
+CONTROL POR SONIDO:
+- LEDs reaccionan a nivel de sonido
+- Colores cambian según intensidad
+- Umbral de sonido configurable
+
+CONTROL DE DIRECCIÓN:
+- 0: Todas las luces
+- 1: Solo mitad izquierda
+- 2: Solo mitad derecha  
+- 3: Solo centro
+
+CONTROL DE BRILLO:
+- Rango: 0-255
+- Ajustable desde app Android
+
+COMANDOS BLUETOOTH v2.0:
+- "BRIGHTNESS:valor" - Ajustar brillo (0-255)
+- "DIRECTION:valor" - Cambiar dirección (0-3)
+- "SOUND_ON" - Activar modo sonido
+- "SOUND_OFF" - Desactivar modo sonido
+
+TROUBLESHOOTING v2.0:
+- Si no responde a sonido: verificar conexión micrófono
+- Si muy sensible: aumentar soundThreshold
+- Si poco sensible: disminuir soundThreshold
+
+¡IMPLEMENTACIÓN v2.0 COMPLETA!

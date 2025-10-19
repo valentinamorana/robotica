@@ -1,0 +1,60 @@
+PASO A PASO - IMPLEMENTACIÓN ARDUINO 2.0
+=========================================
+
+PASO 1: PREPARAR COMPONENTES
+- Arduino Uno
+- Tira LEDs WS2812B
+- Módulo HC-05
+- Micrófono MAX4466
+- Cables jumper
+
+PASO 2: INSTALAR LIBRERÍA
+- Abrir Arduino IDE
+- Ir a: Sketch → Include Library → Manage Libraries
+- Buscar "FastLED" → Instalar
+
+PASO 3: HACER CONEXIONES
+LED WS2812B:
+- VCC → 5V Arduino
+- GND → GND Arduino  
+- DIN → Pin 6 Arduino
+
+HC-05:
+- VCC → 5V Arduino
+- GND → GND Arduino
+- RX → Pin 2 Arduino
+- TX → Pin 3 Arduino
+
+Micrófono MAX4466:
+- VCC → 3.3V Arduino
+- GND → GND Arduino
+- OUT → Pin A0 Arduino
+
+PASO 4: CONFIGURAR HC-05
+- Conectar HC-05 a pines 0,1 temporalmente
+- Subir sketch vacío
+- Abrir Serial Monitor (9600 baudios)
+- Enviar: AT+NAME=LEDController_v2
+- Enviar: AT+PSWD=1234
+- Reconectar HC-05 a pines 2,3
+
+PASO 5: CARGAR CÓDIGO
+- Abrir: /home/mmorana/IA/valen/2.0/arduino/ws2812b_sound_control/ws2812b_sound_control.ino
+- Verificar NUM_LEDS = tu cantidad de LEDs
+- Compilar y subir al Arduino
+
+PASO 6: CALIBRAR MICRÓFONO
+- Abrir Serial Monitor
+- Hacer ruido y observar valores
+- Si muy sensible: aumentar soundThreshold en código
+- Si poco sensible: disminuir soundThreshold
+
+PASO 7: PROBAR FUNCIONAMIENTO
+- LEDs deben reaccionar al sonido
+- Colores cambian según intensidad
+- Probar comandos por Serial Monitor:
+  * BRIGHTNESS:100
+  * DIRECTION:1
+  * SOUND_OFF
+
+¡ARDUINO 2.0 LISTO!
